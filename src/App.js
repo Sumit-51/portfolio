@@ -48,7 +48,12 @@ function App() {
             <li><a href="#projects" className="nav-link"><span>03.</span> Projects</a></li>
             <li><a href="#contact" className="nav-link"><span>04.</span> Contact</a></li>
           </ul>
-          <div className="nav-toggle">
+          <div className="nav-toggle" onClick={() => {
+            const navMenu = document.querySelector('.nav-menu');
+            const navToggle = document.querySelector('.nav-toggle');
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+          }}>
             <span></span>
             <span></span>
             <span></span>
@@ -84,15 +89,14 @@ function App() {
             </div>
 
             <div className="hero-title">
-  <div className="title-container">
-    <div className="typing-title">
-      <span className="typing-text">Computer Science Student & App Developer</span>
-      <span className="cursor-blink">|</span>
-    </div>
-  </div>
-  <div className="title-subtitle">Student • Developer • Designer</div>
-</div>
-
+              <div className="title-container">
+                <div className="typing-title">
+                  <span className="typing-text">Computer Science Student & App Developer</span>
+                  <span className="cursor-blink">|</span>
+                </div>
+              </div>
+              <div className="title-subtitle">Student • Developer • Designer</div>
+            </div>
 
             <div className="hero-description">
               <p className="desc-line">BSc Computer Science student at Kathmandu University</p>
@@ -118,22 +122,37 @@ function App() {
 
             <div className="hero-social">
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://github.com/Sumit-51" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-link"
+                >
                   <span>GitHub</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://www.linkedin.com/in/sumit-paudel-762ba2318/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-link"
+                >
                   <span>LinkedIn</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDXmVkSHLwgQJcZZLpskgxSzVmFLxdmHNcPFtWcRLVRvSlrfDclMwRPkHqWTWrFjJhvLjGX" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="social-link"
+                >
                   <span>Email</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -146,12 +165,11 @@ function App() {
                     <div className="profile-container">
                       <div className="profile-image-container">
                         <div className="profile-image">
-                            <img 
-  src="bg.jpg" 
-  alt="Sumit Paudel" 
-  className="profile-photo"
-/>
-
+                          <img 
+                            src="bg.jpg" 
+                            alt="Sumit Paudel" 
+                            className="profile-photo"
+                          />
                           <div className="profile-border"></div>
                           <div className="profile-glow"></div>
                         </div>
@@ -609,10 +627,38 @@ function App() {
             </div>
             <div className="footer-right">
               <div className="footer-social">
-                <button className="footer-link">GitHub</button>
-                <button className="footer-link">LinkedIn</button>
-                <button className="footer-link">Email</button>
-                <button className="footer-link">Portfolio</button>
+                <a 
+                  href="https://github.com/Sumit-51" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  GitHub
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/sumit-paudel-762ba2318/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  LinkedIn
+                </a>
+                <a 
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDXmVkSHLwgQJcZZLpskgxSzVmFLxdmHNcPFtWcRLVRvSlrfDclMwRPkHqWTWrFjJhvLjGX" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  Email
+                </a>
+                <a 
+                  href="https://www.instagram.com/_sumit404x/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  Instagram
+                </a>
               </div>
             </div>
           </div>
