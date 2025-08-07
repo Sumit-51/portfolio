@@ -1,6 +1,39 @@
 import './App.css';
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    // Mobile navigation toggle functionality
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+      });
+    }
+
+    // Close mobile menu when clicking on nav links
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // Clean up event listeners
+    return () => {
+      if (navToggle && navMenu) {
+        navToggle.removeEventListener('click', () => {});
+      }
+      navLinks.forEach(link => {
+        link.removeEventListener('click', () => {});
+      });
+    };
+  }, []);
+
   return (
     <div className="App">
       {/* Loading Screen - Reduced Time */}
@@ -118,22 +151,48 @@ function App() {
 
             <div className="hero-social">
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://github.com/Sumit-51" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
                   <span>GitHub</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://www.instagram.com/_sumit404x/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
+                  <span>Instagram</span>
+                  <div className="social-hover"></div>
+                </a>
+              </div>
+              <div className="social-item">
+                <a 
+                  href="https://www.linkedin.com/in/sumit-paudel-762ba2318/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
                   <span>LinkedIn</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
               <div className="social-item">
-                <button className="social-link">
+                <a 
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDXmVkSHLwgQJcZZLpskgxSzVmFLxdmHNcPFtWcRLVRvSlrfDclMwRPkHqWTWrFjJhvLjGX" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="social-link"
+                >
                   <span>Email</span>
                   <div className="social-hover"></div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -609,10 +668,38 @@ function App() {
             </div>
             <div className="footer-right">
               <div className="footer-social">
-                <button className="footer-link">GitHub</button>
-                <button className="footer-link">LinkedIn</button>
-                <button className="footer-link">Email</button>
-                <button className="footer-link">Portfolio</button>
+                <a 
+                  href="https://github.com/Sumit-51" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  GitHub
+                </a>
+                <a 
+                  href="https://www.instagram.com/_sumit404x/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  Instagram
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/sumit-paudel-762ba2318/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  LinkedIn
+                </a>
+                <a 
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDXmVkSHLwgQJcZZLpskgxSzVmFLxdmHNcPFtWcRLVRvSlrfDclMwRPkHqWTWrFjJhvLjGX" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                >
+                  Email
+                </a>
               </div>
             </div>
           </div>
